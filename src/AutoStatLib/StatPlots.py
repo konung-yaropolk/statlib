@@ -107,11 +107,12 @@ class BaseStatPlot(Helpers):
         data_groups: list[list[float]],
         p_value_exact: Optional[float] = None,
         Test_Name: str = "",
-        Paired_Test_Applied: bool = False,
         plot_title: str = "",
         x_label: str = "",
         y_label: str = "",
         print_x_labels: bool = True,
+        Paired_Test_Applied: bool = False,
+        Paired_Samples: bool = False,
         Groups_Name: Optional[list[str]] = None,
         subgrouping: Optional[list] = None,
         Posthoc_Matrix: Optional[list[list[float]]] = None,
@@ -140,7 +141,7 @@ class BaseStatPlot(Helpers):
             Posthoc_Matrix if Posthoc_Matrix is not None else []
         )
         self.n_significance_bars: int = 1
-        self.dependent: bool = Paired_Test_Applied
+        self.dependent: bool = Paired_Test_Applied or Paired_Samples
         self.plot_title: str = plot_title
         self.x_label: str = x_label
         self.y_label: str = y_label
