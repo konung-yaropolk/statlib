@@ -3,5 +3,5 @@ scipy>=1.17.0
 statsmodels
 matplotlib
 seaborn
-scikit-posthocs
+scikit-posthocs>=0.16.1
 pandas
